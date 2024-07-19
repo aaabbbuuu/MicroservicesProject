@@ -1,17 +1,29 @@
-public class Startup
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+
+namespace UserService
 {
-    public void ConfigureServices(IServiceCollection services)
+    public class Startup
     {
-        services.AddGrpc();
-    }
-
-    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-    {
-        app.UseRouting();
-
-        app.UseEndpoints(endpoints =>
+        public void ConfigureServices(IServiceCollection services)
         {
-            endpoints.MapGrpcService<UserService.Services.UserService>();
-        });
+            services.AddGrpc();
+        }
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            app.UseRouting();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapGrpcService<Services.UserService>();
+            });
+        }
     }
 }

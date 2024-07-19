@@ -66,19 +66,17 @@ grpcurl -plaintext -d '{"id": 1}' localhost:5001 Order.GetOrder
 
 ### Kubernetes Deployment
 
-If you wish to deploy these services to a Kubernetes cluster, use the deployment files provided in the `k8s/` directory. 
+If you wish to deploy these services to a Kubernetes cluster, use the sample deployment files provided in the `k8s/` directory. 
 
 Apply the deployment files using `kubectl`:
 
 ```sh
 kubectl apply -f k8s/order-service-deployment.yaml
-kubectl apply -f k8s/product-service-deployment.yaml
-kubectl apply -f k8s/user-service-deployment.yaml
 ```
 
 ## Contributing
 
-We welcome contributions! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
+Contributions Welcome! If you have suggestions for improvements, feel free to open an issue or submit a pull request.
 
 ## License
 

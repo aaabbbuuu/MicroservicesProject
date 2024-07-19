@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  orderservice:
+    image: orderservice:latest
+    build:
+      context: .
+      dockerfile: docker/OrderService/Dockerfile
+    ports:
+      - "5001:80"
+
+  productservice:
+    image: productservice:latest
+    build:
+      context: .
+      dockerfile: docker/ProductService/Dockerfile
+    ports:
+      - "5002:80"
+
+  userservice:
+    image: userservice:latest
+    build:
+      context: .
+      dockerfile: docker/UserService/Dockerfile
+    ports:
+      - "5003:80"
