@@ -26,31 +26,6 @@ This project showcases a clean implementation of microservices principles, empha
 *   **Docker Compose**: For orchestrating multi-container applications locally.
 *   **Kubernetes (Optional)**: Example manifests provided for deployment to a Kubernetes cluster.
 
-## Project Structure
-
-The solution is organized as follows:
-MicroservicesProject/
-├── src/
-│ ├── OrderService/
-│ │ ├── Protos/ # .proto definitions for OrderService
-│ │ ├── Services/ # gRPC service implementations
-│ │ ├── Program.cs # Service setup and gRPC endpoint mapping
-│ │ └── OrderService.csproj
-│ ├── ProductService/
-│ │ ├── Protos/
-│ │ ├── Services/
-│ │ ├── Program.cs
-│ │ └── ProductService.csproj
-│ ├── UserService/
-│ │ ├── Protos/
-│ │ ├── Services/
-│ │ ├── Program.cs
-│ │ └── UserService.csproj
-├── k8s/ # Example Kubernetes deployment files (optional)
-├── docker-compose.yml
-└── MicroservicesProject.sln
-└── README.md
-
 ## Proto Definitions (.proto files)
 
 The gRPC service contracts (messages and service methods) are defined in `.proto` files located within the `Protos` directory of each service project (e.g., `src/OrderService/Protos/order.proto`). These files are the source of truth for the API of each microservice.
